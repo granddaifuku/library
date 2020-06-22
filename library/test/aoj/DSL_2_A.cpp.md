@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_A.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-22 15:03:42+09:00
+    - Last commit date: 2020-06-22 15:28:27+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A</a>
@@ -55,12 +55,12 @@ using namespace std;
 
 #include "../../DataStructure/segment_tree.cpp"
 
-const int Inf = 2147483647;
+int INF = 2147483647;
 
 int main() {
     int n, q;
     cin >> n >> q;
-    SegmentTree<int> seg = SegmentTree<int>(n, Inf,
+    SegmentTree<int> seg = SegmentTree<int>(n, INF,
         [](int a, int b) { return min(a, b); }, [](int a, int b) { return b; });
     for (int i = 0; i < q; ++i) {
         int c, x, y;
@@ -151,12 +151,12 @@ class SegmentTree {
 
 #line 8 "test/aoj/DSL_2_A.cpp"
 
-const int Inf = 2147483647;
+int INF = 2147483647;
 
 int main() {
     int n, q;
     cin >> n >> q;
-    SegmentTree<int> seg = SegmentTree<int>(n, Inf,
+    SegmentTree<int> seg = SegmentTree<int>(n, INF,
         [](int a, int b) { return min(a, b); }, [](int a, int b) { return b; });
     for (int i = 0; i < q; ++i) {
         int c, x, y;
