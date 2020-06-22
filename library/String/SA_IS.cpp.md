@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: String/SA_IS.cpp
+# :heavy_check_mark: String/SA_IS.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -36,9 +36,9 @@ layout: default
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/aoj/ALDS_1_14_D.cpp.html">test/aoj/ALDS_1_14_D.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/ALDS_1_14_D.test.cpp.html">test/aoj/ALDS_1_14_D.test.cpp</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: DataStructure/segment_tree.cpp
+# :heavy_check_mark: DataStructure/segment_tree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -36,10 +36,9 @@ layout: default
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/aoj/DSL_2_A.cpp.html">test/aoj/DSL_2_A.cpp</a>
-* :warning: <a href="../test/aoj/DSL_2_B.cpp.html">test/aoj/DSL_2_B.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
 
 
 ## Code

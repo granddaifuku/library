@@ -38,8 +38,8 @@ layout: default
 
 ### DataStructure
 
-* :warning: <a href="library/DataStructure/disjoint_set.cpp.html">DataStructure/disjoint_set.cpp</a>
-* :warning: <a href="library/DataStructure/segment_tree.cpp.html">DataStructure/segment_tree.cpp</a>
+* :heavy_check_mark: <a href="library/DataStructure/disjoint_set.cpp.html">DataStructure/disjoint_set.cpp</a>
+* :heavy_check_mark: <a href="library/DataStructure/segment_tree.cpp.html">DataStructure/segment_tree.cpp</a>
 
 
 <div id="4cdbd2bafa8193091ba09509cedf94fd"></div>
@@ -53,21 +53,14 @@ layout: default
 
 ### String
 
-* :warning: <a href="library/String/SA_IS.cpp.html">String/SA_IS.cpp</a>
-
-
-<div id="0d0c91c0cca30af9c1c9faef0cf04aa9"></div>
-
-### test/aoj
-
-* :warning: <a href="library/test/aoj/ALDS_1_14_D.cpp.html">test/aoj/ALDS_1_14_D.cpp</a>
-* :warning: <a href="library/test/aoj/DSL_1_A.cpp.html">test/aoj/DSL_1_A.cpp</a>
-* :warning: <a href="library/test/aoj/DSL_2_A.cpp.html">test/aoj/DSL_2_A.cpp</a>
-* :warning: <a href="library/test/aoj/DSL_2_B.cpp.html">test/aoj/DSL_2_B.cpp</a>
+* :heavy_check_mark: <a href="library/String/SA_IS.cpp.html">String/SA_IS.cpp</a>
 
 
 ## Verify Files
 
+* :heavy_check_mark: <a href="verify/test/aoj/ALDS_1_14_D.test.cpp.html">test/aoj/ALDS_1_14_D.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DSL_2_A.test.cpp.html">test/aoj/DSL_2_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/GRL_5_C.test.cpp.html">test/aoj/GRL_5_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 

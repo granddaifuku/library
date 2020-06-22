@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/DSL_2_B.cpp
+# :heavy_check_mark: test/aoj/DSL_2_B.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_B.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-22 15:03:42+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_B.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-22 18:27:08+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../DataStructure/segment_tree.cpp.html">DataStructure/segment_tree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/DataStructure/segment_tree.cpp.html">DataStructure/segment_tree.cpp</a>
 
 
 ## Code
@@ -78,7 +78,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj/DSL_2_B.cpp"
+#line 1 "test/aoj/DSL_2_B.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
 #include <bits/stdc++.h>
@@ -147,7 +147,7 @@ class SegmentTree {
 };
 
 
-#line 8 "test/aoj/DSL_2_B.cpp"
+#line 8 "test/aoj/DSL_2_B.test.cpp"
 
 int main() {
     int n, q;

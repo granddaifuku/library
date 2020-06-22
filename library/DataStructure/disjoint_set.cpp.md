@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: DataStructure/disjoint_set.cpp
+# :heavy_check_mark: DataStructure/disjoint_set.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -36,9 +36,9 @@ layout: default
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/aoj/DSL_1_A.cpp.html">test/aoj/DSL_1_A.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_2_A.test.cpp.html">test/aoj/DSL_2_A.test.cpp</a>
 
 
 ## Code
