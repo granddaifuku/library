@@ -31,15 +31,15 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-22 18:27:08+09:00
+    - Last commit date: 2020-06-22 19:06:28+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=en">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=en</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/DataStructure/disjoint_set.cpp.html">DataStructure/disjoint_set.cpp</a>
+* :heavy_check_mark: <a href="../../../library/DataStructure/segment_tree.cpp.html">DataStructure/segment_tree.cpp</a>
 
 
 ## Code
@@ -47,26 +47,26 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=en"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A"
 
 #include <bits/stdc++.h>
 
 using namespace std;
 
-#include "../../DataStructure/disjoint_set.cpp"
+#include "../../DataStructure/segment_tree.cpp"
+
+const int Inf = 2147483647;
 
 int main() {
     int n, q;
     cin >> n >> q;
-    DisjointSet dj = DisjointSet(n);
+    SegmentTree<int> seg = SegmentTree<int>(n, Inf,
+        [](int a, int b) { return min(a, b); }, [](int a, int b) { return b; });
     for (int i = 0; i < q; ++i) {
         int c, x, y;
         cin >> c >> x >> y;
-        if (c) {
-            cout << (dj.isSame(x, y) ? 1 : 0) << endl;
-        } else {
-            dj.makeSet(x, y);
-        }
+        if (c) cout << seg.query(x, y) << endl;
+        else seg.update(x, y);
     }
 
     return 0;
@@ -78,87 +78,88 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/aoj/DSL_2_A.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=en"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A"
 
 #include <bits/stdc++.h>
 
 using namespace std;
 
-#line 1 "DataStructure/disjoint_set.cpp"
+#line 1 "DataStructure/segment_tree.cpp"
 
 
 
-#line 5 "DataStructure/disjoint_set.cpp"
+#line 5 "DataStructure/segment_tree.cpp"
 
 using namespace std;
 
-class DisjointSet {
+template <typename T>
+class SegmentTree {
     public:
-        vector<int> rank, p, size;
+        int n;
+        T e;
+        vector<T> node;
+        function<T(T, T)> operation;
+        function<T(T, T)> process;
 
-        DisjointSet() {}
-        DisjointSet(int n) {
-            rank.resize(n, 0);
-            p.resize(n, 0);
-            size.resize(n, 0);
-            for (int i = 0; i < n; ++i) init(i);
+        SegmentTree() {}
+        SegmentTree(int n_, T e_, function<T(T, T)> operation_, 
+            function<T(T, T)> process_) : e(e_), operation(operation_), process(process_) {
+            n = 1;
+            while (n < n_) n <<= 1;
+            node.assign(2 * n, e);
         }
 
-        void init(int x) {
-            p[x] = x;
-            rank[x] = 0;
-            size[x] = 1;
-        }
-
-        bool isSame(int x, int y) {
-            return root(x) == root(y);
-        }
-
-        void makeSet(int x, int y) {
-            if (isSame(x, y)) return;
-            link(root(x), root(y));
-        }
-
-        void link(int x, int y) {
-            if (rank[x] > rank[y]) {
-                p[y] = x;
-                size[x] += size[y];
-            } else {
-                p[x] = y;
-                size[y] += size[x];
-                if (rank[x] == rank[y]) {
-                    rank[y]++;
-                }
+        void build() {
+            for (int i = n - 1; i > 0; --i) {
+                node[i] = operation(node[i * 2 + 0], node[i * 2 + 1]);
             }
         }
 
-        int root(int x) {
-            if (x != p[x]) {
-                p[x] = root(p[x]);
-            }
-            return p[x];
+        void set(int idx, T v) {
+            node[idx + n] = process(node[idx + n], v);
         }
 
-        int getSize(int x) {
-            return size[root(x)];
+        void update(int idx, T v) {
+            idx += n;
+            node[idx] = process(node[idx], v);
+            while (idx >>= 1) {
+                node[idx] = operation(node[idx * 2 + 0], node[idx * 2 + 1]);
+            }
+        }
+
+        T query(int a, int b) {
+            return query(a, b + 1, 1, 0, n);
+        }
+
+        T query(int a, int b, int k, int l, int r) {
+            if (a >= r || b <= l) return e;
+            if (a <= l && b >= r) return node[k];
+            T c = query(a, b, 2 * k + 0, l, (l + r) / 2);
+            T d = query(a, b, 2 * k + 1, (l + r) / 2, r);
+
+            return operation(c, d);
+        }
+
+        T operator[](int idx) {
+            return node[idx + n];
         }
 };
 
 
 #line 8 "test/aoj/DSL_2_A.test.cpp"
 
+const int Inf = 2147483647;
+
 int main() {
     int n, q;
     cin >> n >> q;
-    DisjointSet dj = DisjointSet(n);
+    SegmentTree<int> seg = SegmentTree<int>(n, Inf,
+        [](int a, int b) { return min(a, b); }, [](int a, int b) { return b; });
     for (int i = 0; i < q; ++i) {
         int c, x, y;
         cin >> c >> x >> y;
-        if (c) {
-            cout << (dj.isSame(x, y) ? 1 : 0) << endl;
-        } else {
-            dj.makeSet(x, y);
-        }
+        if (c) cout << seg.query(x, y) << endl;
+        else seg.update(x, y);
     }
 
     return 0;

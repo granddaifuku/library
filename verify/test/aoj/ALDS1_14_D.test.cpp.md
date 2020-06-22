@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj/ALDS_1_14_D.test.cpp
+# :heavy_check_mark: test/aoj/ALDS1_14_D.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS_1_14_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-22 18:27:08+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/ALDS1_14_D.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-22 19:06:28+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D&lang=jp</a>
@@ -76,7 +76,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj/ALDS_1_14_D.test.cpp"
+#line 1 "test/aoj/ALDS1_14_D.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D&lang=jp"
 
 #include <bits/stdc++.h>
@@ -192,7 +192,7 @@ class SA_IS {
 };
 
 
-#line 8 "test/aoj/ALDS_1_14_D.test.cpp"
+#line 8 "test/aoj/ALDS1_14_D.test.cpp"
 
 int main() {
     string s;
