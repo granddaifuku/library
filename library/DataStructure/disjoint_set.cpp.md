@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5e248f107086635fddcead5bf28943fc">DataStructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/DataStructure/disjoint_set.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-22 15:03:42+09:00
+    - Last commit date: 2020-06-22 15:39:22+09:00
 
 
 
@@ -105,7 +105,7 @@ class DisjointSet {
         }
 };
 
-# endif
+#endif
 ```
 {% endraw %}
 
