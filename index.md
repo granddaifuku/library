@@ -38,9 +38,6 @@ data:
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
     - icon: ':x:'
-      path: test/aoj/DSL_2_D.test.cpp
-      title: test/aoj/DSL_2_D.test.cpp
-    - icon: ':x:'
       path: test/aoj/DSL_2_F.test.cpp
       title: test/aoj/DSL_2_F.test.cpp
     - icon: ':heavy_check_mark:'
