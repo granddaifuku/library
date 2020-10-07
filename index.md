@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/disjoint_set.cpp
       title: DataStructure/disjoint_set.cpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: DataStructure/lazy_segment_tree.cpp
       title: DataStructure/lazy_segment_tree.cpp
     - icon: ':heavy_check_mark:'
@@ -37,7 +37,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_F.test.cpp
       title: test/aoj/DSL_2_F.test.cpp
     - icon: ':heavy_check_mark:'
