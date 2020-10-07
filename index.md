@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/disjoint_set.cpp
       title: DataStructure/disjoint_set.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/lazy_segment_tree.cpp
       title: DataStructure/lazy_segment_tree.cpp
     - icon: ':heavy_check_mark:'

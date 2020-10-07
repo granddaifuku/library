@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_F.test.cpp
+    title: test/aoj/DSL_2_F.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/lazy_segment_tree.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\
@@ -62,8 +65,9 @@ data:
   path: DataStructure/lazy_segment_tree.cpp
   requiredBy: []
   timestamp: '2020-10-08 01:30:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/DSL_2_F.test.cpp
 documentation_of: DataStructure/lazy_segment_tree.cpp
 layout: document
 redirect_from:
