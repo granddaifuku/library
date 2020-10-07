@@ -36,48 +36,87 @@ public:
 	node[idx + n] = v;
   }
 
-  void update(int a, int b, U x) {
-	evaluate(a += n);
-	evaluate(b += n - 1);
-	for (int l = a, r = b + 1; l < r; l >>= 1, r >>= 1) {
-	  if (l & 1) lazy[l] = manage(lazy[l], x), ++l;
-	  if (r & 1) --r, lazy[r] = manage(lazy[r], x);
-	}
-	calc(a);
-	calc(b);
-  }
-
-  T query(int a, int b) {
-	evaluate(a += n);
-	evaluate(b += n - 1);
-	T L = e, R = e;
-	for (int l = a, r = b + 1; l < r; l >>= 1, r >>= 1) {
-	  if (l & 1) L = operation(L, reflect(l++));
-	  if (r & 1) R = operation(reflect(--r), R);
-	}
-
-	return operation(L, R);
-  }
-
-  inline void calc(int k) {
-	while (k >>= 1) node[k] = operation(reflect(2 * k + 0), reflect(2 * k + 1));
-  }
-
-  inline void evaluate(int k) {
-	for (int i = height; i > 0; --i) propagate(k >> i);
-  }
-
-  inline void propagate(int k) {
+  void eval(int k) {
 	if (lazy[k] == oe) return;
-	lazy[2 * k + 0] = manage(lazy[2 * k + 0], lazy[k]);
-	lazy[2 * k + 1] = manage(lazy[2 * k + 1], lazy[k]);
-	node[k] = reflect(k);
+	if (k < n) {
+	  lazy[k * 2 + 0] = manage(lazy[k * 2 + 0], lazy[k]);
+	  lazy[k * 2 + 1] = manage(lazy[k * 2 + 1], lazy[k]);
+	}
+	node[k] = apply(node[k], lazy[k]);
 	lazy[k] = oe;
   }
 
-  inline T reflect(int k) {
-	return lazy[k] == oe ? node[k] : apply(node[k], lazy[k]);
+  void update(int a, int b, U x) {
+	update(a, b, x, 0, 0, n);
   }
+
+  void update(int a, int b, U x, int k, int l, int r) {
+	eval(k);
+	if (a <= l && r <= b) {
+	  lazy[k] = manage(lazy[k], x);
+	  eval(k);
+	} else if (a < r && l < b) {
+	  update(a, b, x, k * 2 + 0, l, (l + r) / 2);
+	  update(a, b, x, k * 2 + 1, (l + r) / 2, r);
+	  node[k] = operation(node[2 * k + 0], node[2 * k + 1]);
+	}
+  }
+
+  T query(int a, int b) {
+	return query(a, b, 0, 0, n);
+  }
+
+  T query(int a, int b, int k, int l, int r) {
+	eval(k);
+	if (a >= r || b <= l) return e;
+	if (a <= l && b >= r) return node[k];
+	T vl = query(a, b, 2 * k + 0, l, (l + r) / 2);
+	T vr = query(a, b, 2 * k + 1, (l + r) / 2, r);
+	return operation(vl, vr);
+  }
+
+  // void update(int a, int b, U x) {
+  // 	evaluate(a += n);
+  // 	evaluate(b += n - 1);
+  // 	for (int l = a, r = b + 1; l < r; l >>= 1, r >>= 1) {
+  // 	  if (l & 1) lazy[l] = manage(lazy[l], x), ++l;
+  // 	  if (r & 1) --r, lazy[r] = manage(lazy[r], x);
+  // 	}
+  // 	calc(a);
+  // 	calc(b);
+  // }
+
+  // T query(int a, int b) {
+  // 	evaluate(a += n);
+  // 	evaluate(b += n - 1);
+  // 	T L = e, R = e;
+  // 	for (int l = a, r = b + 1; l < r; l >>= 1, r >>= 1) {
+  // 	  if (l & 1) L = operation(L, reflect(l++));
+  // 	  if (r & 1) R = operation(reflect(--r), R);
+  // 	}
+
+  // 	return operation(L, R);
+  // }
+
+  // inline void calc(int k) {
+  // 	while (k >>= 1) node[k] = operation(reflect(2 * k + 0), reflect(2 * k + 1));
+  // }
+
+  // inline void evaluate(int k) {
+  // 	for (int i = height; i > 0; --i) propagate(k >> i);
+  // }
+
+  // inline void propagate(int k) {
+  // 	if (lazy[k] == oe) return;
+  // 	lazy[2 * k + 0] = manage(lazy[2 * k + 0], lazy[k]);
+  // 	lazy[2 * k + 1] = manage(lazy[2 * k + 1], lazy[k]);
+  // 	node[k] = reflect(k);
+  // 	lazy[k] = oe;
+  // }
+
+  // inline T reflect(int k) {
+  // 	return lazy[k] == oe ? node[k] : apply(node[k], lazy[k]);
+  // }
 
   T operator[](int idx) {
 	return query(idx, idx + 1);

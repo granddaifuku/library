@@ -13,7 +13,7 @@ const ll INF = 2147483647;
 int main() {
   int n, q;
   cin >> n >> q;
-  LazySegmentTree<ll> seg = LazySegmentTree<ll>(n, INF, 0, [](ll a, ll b) { return min(a, b); }, 
+  LazySegmentTree<ll> seg = LazySegmentTree<ll>(n, INF, 0LL, [](ll a, ll b) { return min(a, b); }, 
 												  [](ll a, ll b) { return b; }, [](ll a, ll b) { return b; });
   for (int i = 0; i < q; ++i) {
 	int type, s, t;
