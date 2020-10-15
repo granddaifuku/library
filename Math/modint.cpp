@@ -67,8 +67,7 @@ public:
 	  if (k & 1) res *= tmp;
 	  tmp *= tmp;
 	  k >>= 1;
-	}
-	
+	}	
 	return res;
   }
 };
