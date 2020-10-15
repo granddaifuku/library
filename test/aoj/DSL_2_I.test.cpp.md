@@ -7,13 +7,13 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_I
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
-  bundledCode: "#line 1 \"test/aoj/DSL_2_F.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_I
+  bundledCode: "#line 1 \"test/aoj/DSL_2_I.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_I\"\
     \n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#line 1 \"DataStructure/lazy_segment_tree.cpp\"\
     \n\n\n\n#line 5 \"DataStructure/lazy_segment_tree.cpp\"\n\nusing namespace std;\n\
     \ntemplate <typename T, typename U = T>\nclass LazySegmentTree {\npublic:\n  int\
@@ -39,34 +39,32 @@ data:
     \ return node[k];\n\tT vl = query(a, b, k * 2 + 0, l, (l + r) / 2);\n\tT vr =\
     \ query(a, b, k * 2 + 1, (l + r) / 2, r);\n\treturn operation(vl, vr);\n  }\n\n\
     \  T operator[](int idx) {\n\treturn query(idx, idx + 1);\n  }\n};\n\n\n#line\
-    \ 8 \"test/aoj/DSL_2_F.test.cpp\"\n\nusing ll = long long;\n\nconst ll INF = 2147483647;\n\
-    \nint main() {\n  int n, q;\n  cin >> n >> q;\n  LazySegmentTree<ll> seg = LazySegmentTree<ll>(n,\
-    \ INF, INF, [](ll a, ll b) { return min(a, b); }, \n\t\t\t\t\t\t\t\t\t\t\t\t \
-    \ [](ll a, ll b) { return b; }, [](ll a, ll b) { return b; });\n  for (int i =\
-    \ 0; i < q; ++i) {\n\tint type, s, t;\n\tcin >> type >> s >> t;\n\tif (type) {\n\
-    \t  cout << seg.query(s, t) << endl;\n\t} else {\n\t  ll x;\n\t  cin >> x;\n\t\
-    \  seg.update(s, t, x);\n\t}\n  }  \n\n  return 0;\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
+    \ 8 \"test/aoj/DSL_2_I.test.cpp\"\n\nint main() {\n  int n, q;\n  cin >> n >>\
+    \ q;\n  LazySegmentTree<int> seg = LazySegmentTree<int>(n, 0, 0, [](int a, int\
+    \ b) { return a + b; }, [](int a, int b) { return b; }, [](int a, int b) { return\
+    \ b; });\n  for (int i = 0; i < q; ++i) {\n\tint c, s, t;\n\tcin >> c >> s >>\
+    \ t;\n\tif (c) {\n\t  cout << seg.query(s, t) << endl;\n\t} else {\n\t  int x;\n\
+    \t  cin >> x;\n\t  seg.update(s, t, x);\n\t}\n  }\n\n  return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_I\"\
     \n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#include \"../../DataStructure/lazy_segment_tree.cpp\"\
-    \n\nusing ll = long long;\n\nconst ll INF = 2147483647;\n\nint main() {\n  int\
-    \ n, q;\n  cin >> n >> q;\n  LazySegmentTree<ll> seg = LazySegmentTree<ll>(n,\
-    \ INF, INF, [](ll a, ll b) { return min(a, b); }, \n\t\t\t\t\t\t\t\t\t\t\t\t \
-    \ [](ll a, ll b) { return b; }, [](ll a, ll b) { return b; });\n  for (int i =\
-    \ 0; i < q; ++i) {\n\tint type, s, t;\n\tcin >> type >> s >> t;\n\tif (type) {\n\
-    \t  cout << seg.query(s, t) << endl;\n\t} else {\n\t  ll x;\n\t  cin >> x;\n\t\
-    \  seg.update(s, t, x);\n\t}\n  }  \n\n  return 0;\n}\n"
+    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  LazySegmentTree<int> seg =\
+    \ LazySegmentTree<int>(n, 0, 0, [](int a, int b) { return a + b; }, [](int a,\
+    \ int b) { return b; }, [](int a, int b) { return b; });\n  for (int i = 0; i\
+    \ < q; ++i) {\n\tint c, s, t;\n\tcin >> c >> s >> t;\n\tif (c) {\n\t  cout <<\
+    \ seg.query(s, t) << endl;\n\t} else {\n\t  int x;\n\t  cin >> x;\n\t  seg.update(s,\
+    \ t, x);\n\t}\n  }\n\n  return 0;\n}\n"
   dependsOn:
   - DataStructure/lazy_segment_tree.cpp
   isVerificationFile: true
-  path: test/aoj/DSL_2_F.test.cpp
+  path: test/aoj/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2020-10-08 01:42:27+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-15 18:19:53+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/DSL_2_F.test.cpp
+documentation_of: test/aoj/DSL_2_I.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/DSL_2_F.test.cpp
-- /verify/test/aoj/DSL_2_F.test.cpp.html
-title: test/aoj/DSL_2_F.test.cpp
+- /verify/test/aoj/DSL_2_I.test.cpp
+- /verify/test/aoj/DSL_2_I.test.cpp.html
+title: test/aoj/DSL_2_I.test.cpp
 ---
