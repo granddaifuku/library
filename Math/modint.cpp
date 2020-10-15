@@ -68,6 +68,7 @@ public:
 	  tmp *= tmp;
 	  k >>= 1;
 	}
+	
 	return res;
   }
 };
