@@ -13,6 +13,16 @@ public:
   constexpr Modint(long long v_ = 0) noexcept : v(v_ % Modulus) {
 	if (v < 0) v += Modulus;
   }
+  Modint pow (long long k) {
+	Modint res(1), tmp(v);
+	while (k) {
+	  if (k & 1) res *= tmp;
+	  tmp *= tmp;
+	  k >>= 1;
+	}	
+	return res;
+  }
+  
   constexpr int getMod() { return Modulus; }
   constexpr Modint operator - () const noexcept {
 	return v ? Modulus - v : 0;
@@ -42,7 +52,7 @@ public:
 	  a -= w * b; swap(a, b);
 	  t -= w * u; swap(t, u);
 	}
-	v = v * u % Modulus;
+	v = v * t % Modulus;
 	if (v < 0) v += Modulus;
 	return *this;
   }
@@ -60,15 +70,6 @@ public:
   }
   friend constexpr ostream& operator << (ostream &os, const Modint<T, Modulus>& x) noexcept {
 	return os << x.v;
-  }
-  Modint pow (long long k) {
-	Modint res(1), tmp(v);
-	while (k) {
-	  if (k & 1) res *= tmp;
-	  tmp *= tmp;
-	  k >>= 1;
-	}	
-	return res;
   }
 };
 
