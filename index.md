@@ -37,6 +37,9 @@ data:
       path: test/aoj/DPL_5_A.test.cpp
       title: test/aoj/DPL_5_A.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/DPL_5_B.test.cpp
+      title: test/aoj/DPL_5_B.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_A.test.cpp
       title: test/aoj/DSL_1_A.test.cpp
     - icon: ':heavy_check_mark:'

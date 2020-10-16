@@ -10,10 +10,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_B
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A
-  bundledCode: "#line 1 \"test/aoj/DPL_5_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_B
+  bundledCode: "#line 1 \"test/aoj/DPL_5_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_B\"\
     \n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#line 1 \"Math/modint.cpp\"\
     \n\n\n\n#line 5 \"Math/modint.cpp\"\n\nusing namespace std;\n\ntemplate<typename\
     \ T = long long, T Modulus = 1000000007>\nclass Modint {\npublic:\n  T v;\n  constexpr\
@@ -41,25 +41,27 @@ data:
     \ \n  }\n  friend constexpr ostream& operator << (ostream &os, const Modint<T,\
     \ Modulus>& x) noexcept {\n\treturn os << x.v;\n  }\n  Modint pow (long long k)\
     \ {\n\tModint res(1), tmp(v);\n\twhile (k) {\n\t  if (k & 1) res *= tmp;\n\t \
-    \ tmp *= tmp;\n\t  k >>= 1;\n\t}\t\n\treturn res;\n  }\n};\n\n\n#line 8 \"test/aoj/DPL_5_A.test.cpp\"\
-    \n\nint main() {  \n  int n;\n  Modint<long long> mint;\n  cin >> n >> mint.v;\n\
-    \  cout << mint.pow(n).v << endl;\n\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A\"\
+    \ tmp *= tmp;\n\t  k >>= 1;\n\t}\t\n\treturn res;\n  }\n};\n\n\n#line 8 \"test/aoj/DPL_5_B.test.cpp\"\
+    \n\nint main() {\n  int n, k;\n  Modint<> mint = Modint<>(1);\n  cin >> n >> k;\n\
+    \  if (n > k) {\n\tcout << 0 << endl;\n\treturn 0;\n  }\n  for (int i = k, j =\
+    \ 0; j < n; --i, ++j) mint *= i;\n  cout << mint.v << endl;\n  \n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_B\"\
     \n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#include \"../../Math/modint.cpp\"\
-    \n\nint main() {  \n  int n;\n  Modint<long long> mint;\n  cin >> n >> mint.v;\n\
-    \  cout << mint.pow(n).v << endl;\n\n  return 0;\n}\n"
+    \n\nint main() {\n  int n, k;\n  Modint<> mint = Modint<>(1);\n  cin >> n >> k;\n\
+    \  if (n > k) {\n\tcout << 0 << endl;\n\treturn 0;\n  }\n  for (int i = k, j =\
+    \ 0; j < n; --i, ++j) mint *= i;\n  cout << mint.v << endl;\n  \n}\n"
   dependsOn:
   - Math/modint.cpp
   isVerificationFile: true
-  path: test/aoj/DPL_5_A.test.cpp
+  path: test/aoj/DPL_5_B.test.cpp
   requiredBy: []
   timestamp: '2020-10-16 13:12:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/DPL_5_A.test.cpp
+documentation_of: test/aoj/DPL_5_B.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/DPL_5_A.test.cpp
-- /verify/test/aoj/DPL_5_A.test.cpp.html
-title: test/aoj/DPL_5_A.test.cpp
+- /verify/test/aoj/DPL_5_B.test.cpp
+- /verify/test/aoj/DPL_5_B.test.cpp.html
+title: test/aoj/DPL_5_B.test.cpp
 ---
