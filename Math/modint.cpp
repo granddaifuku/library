@@ -5,7 +5,7 @@
 
 using namespace std;
 
-template<typename T, T Modulus = 1000000007>
+template<typename T = long long, T Modulus = 1000000007>
 class Modint {
 public:
   T v;
