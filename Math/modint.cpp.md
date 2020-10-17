@@ -10,8 +10,8 @@ data:
     path: test/aoj/DPL_5_B.test.cpp
     title: test/aoj/DPL_5_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/DPL_5_C.test.cpp
-    title: test/aoj/DPL_5_C.test.cpp
+    path: test/aoj/DPL_5_D.test.cpp
+    title: test/aoj/DPL_5_D.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -81,7 +81,7 @@ data:
   verifiedWith:
   - test/aoj/DPL_5_A.test.cpp
   - test/aoj/DPL_5_B.test.cpp
-  - test/aoj/DPL_5_C.test.cpp
+  - test/aoj/DPL_5_D.test.cpp
 documentation_of: Math/modint.cpp
 layout: document
 redirect_from:

@@ -13,7 +13,7 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D
-  bundledCode: "#line 1 \"test/aoj/DPL_5_C.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D\"\
+  bundledCode: "#line 1 \"test/aoj/DPL_5_D.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D\"\
     \n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#line 1 \"Math/modint.cpp\"\
     \n\n\n\n#line 5 \"Math/modint.cpp\"\n\nusing namespace std;\n\ntemplate<typename\
     \ T = long long, T Modulus = 1000000007>\nclass Modint {\npublic:\n  T v;\n  constexpr\
@@ -41,7 +41,7 @@ data:
     \ < (const Modint& m) const noexcept {\n\treturn this->v < m.v; \n  }\n  constexpr\
     \ bool operator > (const Modint& m) const noexcept {\n\treturn this->v > m.v;\
     \ \n  }\n  friend constexpr ostream& operator << (ostream &os, const Modint<T,\
-    \ Modulus>& x) noexcept {\n\treturn os << x.v;\n  }\n};\n\n\n#line 8 \"test/aoj/DPL_5_C.test.cpp\"\
+    \ Modulus>& x) noexcept {\n\treturn os << x.v;\n  }\n};\n\n\n#line 8 \"test/aoj/DPL_5_D.test.cpp\"\
     \n\nint main() {\n  int n, k;\n  cin >> n >> k;\n  Modint<> res = Modint<>(1);\n\
     \  for (int i = 1; i < n + k; ++i) res *= i;\n  for (int i = 1; i < n + 1; ++i)\
     \ res /= i;\n  for (int i = 1; i < k; ++i) res /= i;\n  cout << res << endl;\n\
@@ -55,15 +55,15 @@ data:
   dependsOn:
   - Math/modint.cpp
   isVerificationFile: true
-  path: test/aoj/DPL_5_C.test.cpp
+  path: test/aoj/DPL_5_D.test.cpp
   requiredBy: []
-  timestamp: '2020-10-17 00:04:24+09:00'
+  timestamp: '2020-10-17 17:50:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/DPL_5_C.test.cpp
+documentation_of: test/aoj/DPL_5_D.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/DPL_5_C.test.cpp
-- /verify/test/aoj/DPL_5_C.test.cpp.html
-title: test/aoj/DPL_5_C.test.cpp
+- /verify/test/aoj/DPL_5_D.test.cpp
+- /verify/test/aoj/DPL_5_D.test.cpp.html
+title: test/aoj/DPL_5_D.test.cpp
 ---

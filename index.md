@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/disjoint_set.cpp
       title: DataStructure/disjoint_set.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/lazy_segment_tree.cpp
       title: DataStructure/lazy_segment_tree.cpp
     - icon: ':heavy_check_mark:'
@@ -40,8 +40,8 @@ data:
       path: test/aoj/DPL_5_B.test.cpp
       title: test/aoj/DPL_5_B.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/DPL_5_C.test.cpp
-      title: test/aoj/DPL_5_C.test.cpp
+      path: test/aoj/DPL_5_D.test.cpp
+      title: test/aoj/DPL_5_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_A.test.cpp
       title: test/aoj/DSL_1_A.test.cpp
@@ -57,7 +57,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_H.test.cpp
       title: test/aoj/DSL_2_H.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_I.test.cpp
       title: test/aoj/DSL_2_I.test.cpp
     - icon: ':heavy_check_mark:'
