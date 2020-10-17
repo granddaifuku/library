@@ -14,7 +14,7 @@ int main() {
   int n, q;
   cin >> n >> q;
   LazySegmentTree<int> seg = LazySegmentTree<int>(n, INF, 0, [](int a, int b) { return min(a, b); },
-												  [](int a, int b) { return a + b; }, [](int a, int b) { return a + b; });
+												  [](int a, int b) { return a + b; }, [](int a, int b) { return a + b; }, [](int a, int b) { return a; });
   for (int i = 0; i < n; ++i) seg.set(i, 0);
   seg.build();
   for (int i = 0; i < q; ++i) {
