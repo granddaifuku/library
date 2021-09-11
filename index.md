@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: DataStructure/disjoint_set.cpp
       title: DataStructure/disjoint_set.cpp
     - icon: ':heavy_check_mark:'
@@ -42,7 +42,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_D.test.cpp
       title: test/aoj/DPL_5_D.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL_1_A.test.cpp
       title: test/aoj/DSL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -65,7 +65,7 @@ data:
       title: test/aoj/GRL_5_C.test.cpp
   - name: test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/example.test.cpp
       title: test/example.test.cpp
 layout: toppage
