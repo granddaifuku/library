@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_1_A.test.cpp
     title: test/aoj/DSL_1_A.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/disjoint_set.cpp\"\n\n\n\n#include <bits/stdc++.h>\n\
@@ -22,8 +22,8 @@ data:
     \      p[y] = x;\n      size[x] += size[y];\n    } else {\n      p[x] = y;\n \
     \     size[y] += size[x];\n      if (rank[x] == rank[y]) {\n        rank[y]++;\n\
     \      }\n    }\n  }\n\n  int root(int x) {\n    if (x != p[x]) {\n      p[x]\
-    \ = root(p[x]);\n    }\n  }\n\n  int getSize(int x) { return size[root(x)]; }\n\
-    };\n\n\n"
+    \ = root(p[x]);\n    }\n    return p[x];\n  }\n\n  int getSize(int x) { return\
+    \ size[root(x)]; }\n};\n\n\n"
   code: "#ifndef H_disjoint_set\n#define H_disjoint_set\n\n#include <bits/stdc++.h>\n\
     \nusing namespace std;\n\nclass DisjointSet {\n public:\n  vector<int> rank, p,\
     \ size;\n\n  DisjointSet() {}\n  DisjointSet(int n) {\n    rank.resize(n, 0);\n\
@@ -35,14 +35,14 @@ data:
     \      p[y] = x;\n      size[x] += size[y];\n    } else {\n      p[x] = y;\n \
     \     size[y] += size[x];\n      if (rank[x] == rank[y]) {\n        rank[y]++;\n\
     \      }\n    }\n  }\n\n  int root(int x) {\n    if (x != p[x]) {\n      p[x]\
-    \ = root(p[x]);\n    }\n  }\n\n  int getSize(int x) { return size[root(x)]; }\n\
-    };\n\n#endif\n"
+    \ = root(p[x]);\n    }\n    return p[x];\n  }\n\n  int getSize(int x) { return\
+    \ size[root(x)]; }\n};\n\n#endif\n"
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/disjoint_set.cpp
   requiredBy: []
-  timestamp: '2021-09-04 15:28:55+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-09-12 11:32:16+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_1_A.test.cpp
 documentation_of: DataStructure/disjoint_set.cpp

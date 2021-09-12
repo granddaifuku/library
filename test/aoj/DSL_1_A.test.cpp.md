@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/disjoint_set.cpp
     title: DataStructure/disjoint_set.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=en
@@ -27,11 +27,12 @@ data:
     \      size[x] += size[y];\n    } else {\n      p[x] = y;\n      size[y] += size[x];\n\
     \      if (rank[x] == rank[y]) {\n        rank[y]++;\n      }\n    }\n  }\n\n\
     \  int root(int x) {\n    if (x != p[x]) {\n      p[x] = root(p[x]);\n    }\n\
-    \  }\n\n  int getSize(int x) { return size[root(x)]; }\n};\n\n\n#line 9 \"test/aoj/DSL_1_A.test.cpp\"\
-    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  DisjointSet dj = DisjointSet(n);\n\
-    \  for (int i = 0; i < q; ++i) {\n    int c, x, y;\n    cin >> c >> x >> y;\n\
-    \    if (c) {\n      cout << (dj.isSame(x, y) ? 1 : 0) << endl;\n    } else {\n\
-    \      dj.makeSet(x, y);\n    }\n  }\n\n  return 0;\n}\n"
+    \    return p[x];\n  }\n\n  int getSize(int x) { return size[root(x)]; }\n};\n\
+    \n\n#line 9 \"test/aoj/DSL_1_A.test.cpp\"\n\nint main() {\n  int n, q;\n  cin\
+    \ >> n >> q;\n  DisjointSet dj = DisjointSet(n);\n  for (int i = 0; i < q; ++i)\
+    \ {\n    int c, x, y;\n    cin >> c >> x >> y;\n    if (c) {\n      cout << (dj.isSame(x,\
+    \ y) ? 1 : 0) << endl;\n    } else {\n      dj.makeSet(x, y);\n    }\n  }\n\n\
+    \  return 0;\n}\n"
   code: "#define PROBLEM \\\n  \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=en\"\
     \n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#include \"../../DataStructure/disjoint_set.cpp\"\
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  DisjointSet dj = DisjointSet(n);\n\
@@ -43,8 +44,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2021-09-11 17:04:03+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-09-12 11:32:16+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_A.test.cpp
 layout: document
