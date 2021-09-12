@@ -63,10 +63,5 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_5_C.test.cpp
       title: test/aoj/GRL_5_C.test.cpp
-  - name: test
-    pages:
-    - icon: ':x:'
-      path: test/example.test.cpp
-      title: test/example.test.cpp
 layout: toppage
 ---
