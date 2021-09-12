@@ -47,6 +47,7 @@ class DisjointSet {
     if (x != p[x]) {
       p[x] = root(p[x]);
     }
+    return p[x];
   }
 
   int getSize(int x) { return size[root(x)]; }
